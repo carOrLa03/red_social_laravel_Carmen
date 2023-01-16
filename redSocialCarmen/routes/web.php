@@ -14,5 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    $images = \App\Models\Image::all();
+    foreach ($images as $image){
+        echo $image->image_path . "<br>";
+        echo $image->description . "<br>";
+        echo $image->user->name . ' '. $image->user->surname;
+        echo "<br>";
+    }
+    die();
     return view('welcome');
+
 });

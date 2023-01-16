@@ -14,13 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->id();
-            $table->integer('user_id');
-            $table->integer('image_id');
+            $table->engine = 'InnoDB';
+
+            $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('image_id')->unsigned();
             $table->string('content');
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('image_id')->references('id')->on('images');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
 
             $table->timestamps();
         });

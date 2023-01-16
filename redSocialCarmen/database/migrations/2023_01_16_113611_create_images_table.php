@@ -14,13 +14,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
-            $table->id();
-            $table->integer('user_id');
+            $table->engine = 'InnoDB';
+
+            $table->increments('id');
+            $table->integer('user_id')->unsigned();
             $table->string('image_path')->unique();
             $table->string('description');
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+
         });
     }
 
