@@ -116,6 +116,16 @@
       <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/nette/utils" />
       <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/nette/schema" />
+      <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/dasprid/enum" />
+      <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/jenssegers/agent" />
+      <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/paragonie/constant_time_encoding" />
+      <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/jaybizzle/crawler-detect" />
+      <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/pragmarx/google2fa" />
+      <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/livewire/livewire" />
+      <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/bacon/bacon-qr-code" />
+      <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/mobiledetect/mobiledetectlib" />
+      <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/laravel/fortify" />
+      <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/laravel/jetstream" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
