@@ -3,7 +3,7 @@
     @parent
 @endsection
 @section('content')
-    <h3>página Home, es la de inicio</h3>
+    <h3>página Dashboard, es la de inicio</h3>
 @endsection
 @section('footer')
     @parent
