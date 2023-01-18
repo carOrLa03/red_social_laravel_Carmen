@@ -9,16 +9,17 @@
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/app.css')}}">--}}
 </head>
-<body>
+<body class="dark:bg-indigo-900/50">
 @section('header')
 <header>
     <nav class="nav">
         <div class="caja_logo">
-            <img src="{{asset('images/icons/logo.png')}}" alt="logo" class="logo">
+            <img src="{{asset('images/icons/logo.png')}}" alt="logo" class="logo w-3">
         </div>
         <div>
-            <ul class="nav_lista">
+            <ul class="nav_lista flex">
                 <li class="lista_item"><a href="/" class="link">Home</a></li>
                 <li class="lista_item"><a href="login" class="link">Log In</a></li>
                 <li class="lista_item"><a href="#" class="link">Red</a></li>

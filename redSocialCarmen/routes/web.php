@@ -13,31 +13,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Route::get('/', function () {
+//    $images = \App\Models\Image::all();
+//
+//    foreach ($images as $image){
+//        echo "<img src='$image->image_path' alt=''> <br>";
+//        echo $image->image_path . "<br>";
+//        echo $image->description . "<br>";
+//        echo $image->user->name . ' '. $image->user->surname;
+//        echo "<br>";
+//
+//        echo "<h2>Comments</h2> <br>";
+//        $comments = \App\Models\Comment::all()->where('image_id', '=', $image->id);
+//        $likes =count(\App\Models\Like::all()->where('image_id', '=', $image->id));
+//
+//        foreach ($comments as $comment){
+//            echo $comment->content;
+//        }
+//        echo '<h3>Likes: </h3>' . $likes . '<br>';
+//        echo '<hr>';
+//    }
+//
+//
+//    die();
+//    return view('welcome');
+//
+//});
+
 Route::get('/', function () {
-    $images = \App\Models\Image::all();
-
-    foreach ($images as $image){
-        echo "<img src='$image->image_path' alt=''> <br>";
-        echo $image->image_path . "<br>";
-        echo $image->description . "<br>";
-        echo $image->user->name . ' '. $image->user->surname;
-        echo "<br>";
-
-        echo "<h2>Comments</h2> <br>";
-        $comments = \App\Models\Comment::all()->where('image_id', '=', $image->id);
-        $likes =count(\App\Models\Like::all()->where('image_id', '=', $image->id));
-
-        foreach ($comments as $comment){
-            echo $comment->content;
-        }
-        echo '<h3>Likes: </h3>' . $likes . '<br>';
-        echo '<hr>';
-    }
-
-
-    die();
     return view('welcome');
-
 });
 
 Route::middleware([
