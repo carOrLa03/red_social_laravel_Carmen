@@ -8,10 +8,12 @@
     <title>Red social</title>
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+{{--    @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
 {{--    <link rel="stylesheet" href="{{asset('css/app.css')}}">--}}
+
 </head>
-<body class="dark:bg-indigo-900/50">
+<body>
 @section('header')
 <header class="table-header-group">
     <nav class="nav">
