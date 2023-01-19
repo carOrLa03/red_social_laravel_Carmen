@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->id('id',1);
+            $table->unsignedBigInteger('user_id');
             $table->string('image_path')->unique();
             $table->string('description');
 

@@ -13,7 +13,7 @@
 </head>
 <body class="dark:bg-indigo-900/50">
 @section('header')
-<header>
+<header class="table-header-group">
     <nav class="nav">
         <div class="caja_logo">
             <img src="{{asset('images/icons/logo.png')}}" alt="logo" class="logo w-3">
@@ -21,12 +21,16 @@
         <div>
             <ul class="nav_lista flex">
                 <li class="lista_item"><a href="/" class="link">Home</a></li>
-                <li class="lista_item"><a href="login" class="link">Log In</a></li>
-                <li class="lista_item"><a href="#" class="link">Red</a></li>
+                <li class="lista_item"><a href="{{ route('register') }}" class="link">Register</a></li>
+                <li class="lista_item"><a href="{{ route('login') }}" class="link">Log In</a></li>
+
             </ul>
         </div>
 
     </nav>
+    <div class="container">
+        <h1 class="title">Red Social</h1>
+    </div>
 </header>
 @show
 @yield('content')

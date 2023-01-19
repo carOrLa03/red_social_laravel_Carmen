@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->integer('image_id')->unsigned();
+            $table->id('id',1);
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('image_id');
             $table->string('content');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

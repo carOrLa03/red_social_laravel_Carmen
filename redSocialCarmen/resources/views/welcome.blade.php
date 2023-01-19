@@ -3,7 +3,7 @@
     @parent
 @endsection
 @section('content')
-    <h3 class="text-red-600">página Dashboard, es la de inicio</h3>
+    <h3 class="">Contacta con tus amigos cuando quieras </h3>
 @endsection
 @section('footer')
     @parent
