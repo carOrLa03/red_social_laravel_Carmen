@@ -8,9 +8,11 @@
     <title>Red social</title>
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-{{--    @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
+
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
-{{--    <link rel="stylesheet" href="{{asset('css/app.css')}}">--}}
 
 </head>
 <body>
@@ -18,14 +20,13 @@
 <header class="table-header-group">
     <nav class="nav">
         <div class="caja_logo">
-            <img src="{{asset('images/icons/logo.png')}}" alt="logo" class="logo w-3">
+            <img src="{{asset('images/icons/logo.png')}}" alt="logo" class="logo">
         </div>
         <div>
             <ul class="nav_lista flex">
                 <li class="lista_item"><a href="/" class="link">Home</a></li>
                 <li class="lista_item"><a href="{{ route('register') }}" class="link">Register</a></li>
                 <li class="lista_item"><a href="{{ route('login') }}" class="link">Log In</a></li>
-
             </ul>
         </div>
 
