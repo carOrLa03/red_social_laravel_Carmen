@@ -20,11 +20,14 @@
         </div>
     </section>
     <section>
-        <div class="flex">
+        <div class="flex flex-wrap justify-center p-6">
                 @foreach($images as $image)
-                    <div>
-                        <img src="{{$image->image_path}}" alt="imagen">
-                        <p>{{$image->description}}</p>
+                    <div class="flex flex-col md:flex-row md:max-w-xl rounded bg-white shadow-lg">
+                        <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded md:rounded-l-lg" src="{{$image->image_path}}" alt="imagen">
+                        <div class="p-6 flex flex-col justify-start">
+                            <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
+                            <p class="text-gray-700 text-base mb-4">{{$image->description}}</p>
+                        </div>
                     </div>
                 @endforeach
         </div>
