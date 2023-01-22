@@ -19,6 +19,16 @@
             </div>
         </div>
     </section>
+    <section>
+        <div class="flex">
+                @foreach($images as $image)
+                    <div>
+                        <img src="{{$image->image_path}}" alt="imagen">
+                        <p>{{$image->description}}</p>
+                    </div>
+                @endforeach
+        </div>
+    </section>
 
 @endsection
 @section('footer')
