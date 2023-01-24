@@ -44,7 +44,7 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index']);
+Route::get('', [\App\Http\Controllers\WelcomeController::class, 'index']);
 
 
 Route::middleware([
@@ -52,7 +52,17 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+    Route::prefix('dashboard')->group(function(){
+        Route::get('', function(){
+            return view('dashboard');
+        })->name('dashboard');
+        });
+    Route::prefix('user')->group(function(){
+        Route::get('show',function(){
+            return view('profile.show');
+        })->name('show');
+        Route::get('form', [\App\Http\Controllers\ImageController::class, 'form'])->name('form');
+        Route::post('save_images', [\App\Http\Controllers\ImageController::class, 'save_images'])->name('save_images');
+        Route::get('showImages', [\App\Http\Controllers\ImageController::class, 'showImage'])->name('showImages');
+    });
+    });
