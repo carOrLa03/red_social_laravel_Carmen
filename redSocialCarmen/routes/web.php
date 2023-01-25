@@ -64,5 +64,6 @@ Route::middleware([
         Route::get('form', [\App\Http\Controllers\ImageController::class, 'form'])->name('form');
         Route::post('save_images', [\App\Http\Controllers\ImageController::class, 'save_images'])->name('save_images');
         Route::get('showImages', [\App\Http\Controllers\ImageController::class, 'showImage'])->name('showImages');
+        Route::get('dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
     });
     });

@@ -21,7 +21,6 @@ class ImageController extends Controller
     public function save_images(Request $request){
         $image_path = $request->file('image');
         $description = $request->input('description');
-        $user = \Auth::user();
         $id = Auth::id();
 
         $image = new Image();
@@ -30,14 +29,16 @@ class ImageController extends Controller
 
         if($image_path){
             $image_path_name = time().$image_path->getClientOriginalName();
-            Storage::disk('image')->put($image_path_name, File::get($image_path));
+            Storage::disk('img_red')->put($image_path_name, \Illuminate\Support\Facades\File::get($image_path));
+            $image->image_path = $image_path_name;
         }
 
         $image->save();
-        return redirect()->route('pages.showImages');
+        return redirect()->route('dashboard');
     }
 
     public function showImage(){
-        return view('pages.showImages');
+
+        return view('dashboard');
     }
 }

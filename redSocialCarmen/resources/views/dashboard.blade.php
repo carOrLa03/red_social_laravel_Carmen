@@ -8,10 +8,16 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-jet-welcome />
-            </div>
+            @foreach($images as $image)
+                {{$image->user->name . ' '. $image->user->surname}}
+                {{$image->description}} <br>
+                <img src="{{asset('img_red/'.$image->image_path)}}">
+{{--      Diferencia entre la fecha actual y la subida a la red social      --}}
+                <p>Hace {{$now->sub($image->created_at)->longAbsoluteDiffForHumans()}}</p>
+            @endforeach
+
         </div>
+        <div>{{$images->links()}}</div>
     </div>
 
 </x-app-layout>
