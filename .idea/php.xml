@@ -47,7 +47,6 @@
       <path value="$PROJECT_DIR$/redSocialCarmen/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/redSocialCarmen/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/redSocialCarmen/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/redSocialCarmen/vendor/doctrine/deprecations" />
       <path value="$PROJECT_DIR$/redSocialCarmen/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/redSocialCarmen/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/redSocialCarmen/vendor/symfony/uid" />

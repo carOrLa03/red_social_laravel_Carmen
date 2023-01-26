@@ -53,7 +53,6 @@
       <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/doctrine/inflector" />
-      <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/doctrine/deprecations" />
       <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/theseer/tokenizer" />
       <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/symfony/uid" />

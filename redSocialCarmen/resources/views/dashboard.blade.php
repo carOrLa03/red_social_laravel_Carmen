@@ -9,9 +9,10 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             @foreach($images as $image)
+                {{dump($image->image_path)}}
                 {{$image->user->name . ' '. $image->user->surname}}
                 {{$image->description}} <br>
-                <img src="{{asset('img_red/'.$image->image_path)}}">
+                <img src="{{asset('img_red_social/'.$image->image_path)}}">
 {{--      Diferencia entre la fecha actual y la subida a la red social      --}}
                 <p>Hace {{$now->sub($image->created_at)->longAbsoluteDiffForHumans()}}</p>
             @endforeach

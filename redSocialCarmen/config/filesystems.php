@@ -61,6 +61,13 @@ return [
             'url'=> env('APP_URL').'/img_red',
             'visibility' => 'public',
             'throw' => false
+        ],
+        'img_red_social' =>[
+            'driver' => 'local',
+            'root'=> storage_path('app/img_red_social'),
+            'url'=> env('APP_URL').'/img_red_social',
+            'visibility' => 'public',
+            'throw' => false
         ]
 
     ],
@@ -77,8 +84,9 @@ return [
     */
 
     'links' => [
-        public_path('storage') => storage_path('app/public'),
-        public_path('img_red') => storage_path('app/img_red'),
+        //public_path('storage') => storage_path('app/public'),
+        //public_path('img_red') => storage_path('app/img_red'),
+        public_path('img_red_social') => storage_path('app/img_red_social'),
 
     ],
 
