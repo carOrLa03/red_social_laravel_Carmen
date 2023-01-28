@@ -18,7 +18,7 @@ class DashboardController extends Controller
     {
         $images = Image::orderBy('id', 'desc')->paginate(2);
         $now = Carbon::now();
-        return view('dashboard', compact('images', 'now'));
+        return view('dashboard', ['images'=> $images, 'now' => $now]);
     }
 
     /**
