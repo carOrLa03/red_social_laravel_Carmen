@@ -1,8 +1,8 @@
-@extends('layouts.master')
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Red social') }}
+            {{ __('Home') }}
         </h2>
     </x-slot>
 
@@ -21,6 +21,4 @@
     </div>
 
 </x-app-layout>
-@section('footer')
-    @parent
-@endsection
+
