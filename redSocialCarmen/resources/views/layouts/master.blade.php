@@ -26,7 +26,12 @@
             <ul class="nav_lista flex">
                 <li class="lista_item"><a href="/" class="link">Home</a></li>
                 <li class="lista_item"><a href="{{ route('register') }}" class="link">Register</a></li>
+                @guest
                 <li class="lista_item"><a href="{{ route('login') }}" class="link">Log In</a></li>
+                @endguest
+                @auth
+                    <li class="lista_item"><a href="{{ route('dashboard') }}" class="link">Dashboard</a></li>
+                @endauth
             </ul>
         </div>
 
