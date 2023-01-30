@@ -55,13 +55,13 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
         ],
-        'img_red' =>[
-            'driver' => 'local',
-            'root'=> storage_path('app/img_red'),
-            'url'=> env('APP_URL').'/img_red',
-            'visibility' => 'public',
-            'throw' => false
-        ],
+//        'img_red' =>[
+//            'driver' => 'local',
+//            'root'=> storage_path('app/img_red'),
+//            'url'=> env('APP_URL').'/img_red',
+//            'visibility' => 'public',
+//            'throw' => false
+//        ],
         'img_red_social' =>[
             'driver' => 'local',
             'root'=> storage_path('app/img_red_social'),

@@ -54,12 +54,8 @@ Route::middleware([
 ])->group(function () {
     Route::prefix('dashboard')->group(function(){
         Route::get('', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
-//        Route::get('', function(){
-//            return view('dashboard');
-//        })->name('dashboard');
         });
     Route::prefix('user')->group(function(){
-
         Route::get('show',function(){
             return view('profile.show');
         })->name('show');

@@ -8,9 +8,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            {{$now}}
             @foreach($images as $image)
-{{--                {{dump($image->image_path)}}--}}
                 {{$image->user->name . ' '. $image->user->surname}}
                 {{$image->description}} <br>
                 <img src="{{asset('img_red_social/'.$image->image_path)}}">

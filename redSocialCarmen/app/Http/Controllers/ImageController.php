@@ -29,7 +29,7 @@ class ImageController extends Controller
 
         if($image_path){
             $image_path_name = time().$image_path->getClientOriginalName();
-            Storage::disk('img_red')->put($image_path_name, \Illuminate\Support\Facades\File::get($image_path));
+            Storage::disk('img_red_social')->put($image_path_name, \Illuminate\Support\Facades\File::get($image_path));
             $image->image_path = $image_path_name;
         }
 
