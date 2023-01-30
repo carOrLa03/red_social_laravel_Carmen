@@ -14,6 +14,20 @@
                 <img src="{{asset('img_red_social/'.$image->image_path)}}">
 {{--      Diferencia entre la fecha actual y la subida a la red social      --}}
                 <p>Hace {{$now->sub($image->created_at)->longAbsoluteDiffForHumans()}}</p>
+
+                <div>
+                    <form action="{{route('store')}}" method="post">
+                        @csrf
+                        <x-jet-label>Deja tu comentario</x-jet-label>
+                        <div>
+                            <input type="hidden" name="img_id" value="{{$image->id}}">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="content"></textarea>
+                        </div>
+                        <div>
+                            <x-jet-button>Envía</x-jet-button>
+                        </div>
+                    </form>
+                </div>
             @endforeach
 
         </div>

@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
-use App\Models\Image;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
-class DashboardController extends Controller
+class CommentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +15,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        Carbon::setLocale('ES');
-        $images = Image::orderBy('id', 'desc')->paginate(2);
-        $now = Carbon::now();
-
-
-        return view('dashboard',['images' => $images, 'now' => $now]);
+        //
     }
 
     /**
@@ -43,7 +36,19 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //recojo los valores introducidos en el formulario
+        $id = Auth::id();
+        $img_id = $request->input('img_id');
+        $content = $request->input('content');
+
+        // creo un nuevo objeto comentario,
+        // le asigno las variables a los atributos y lo guardo en la BBDD
+        $comment = new Comment();
+        $comment->user_id = $id;
+        $comment->image_id = $img_id;
+        $comment->content = $content;
+        $comment->save();
+        return redirect()->route('dashboard');
     }
 
     /**
@@ -54,7 +59,7 @@ class DashboardController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
