@@ -15,15 +15,15 @@
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
 
 </head>
-<body>
+<body class="bg-gris">
 @section('header')
-<header class="table-header-group">
-    <nav class="nav">
-        <div class="caja_logo">
+<header class="bg-crimson">
+    <nav class="flex justify-between">
+        <div class="caja_logo m-6">
             <img src="{{asset('images/icons/logo.png')}}" alt="logo" class="logo">
         </div>
         <div>
-            <ul class="nav_lista flex">
+            <ul class="nav_lista flex m-6">
                 <li class="lista_item"><a href="/" class="link">Home</a></li>
                 <li class="lista_item"><a href="{{ route('register') }}" class="link">Register</a></li>
                 @guest
@@ -36,15 +36,14 @@
         </div>
 
     </nav>
-    <div class="container">
-        <h1 class="title">Red Social</h1>
+    <div class="flex justify-center">
+        <h1 class="title text-xl m-4">Red Social</h1>
     </div>
 </header>
 @show
 @yield('content')
-@section('footer')
-<footer class="footer">
-    <div>
+<footer class="footer bg-crimson flex flex-col">
+    <div class="justify-center items-center">
         <ul class="nav_lista">
             <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/github.png')}}" alt="Git Hub" class="link_logo"></a></li>
             <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/facebook.png')}}" alt="Facebook" class="link_logo"></a></li>
@@ -52,12 +51,10 @@
             <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/whatsapp.png')}}" alt="Whatsapp" class="link_logo"></a></li>
         </ul>
     </div>
-    <div>
-        <p class="text">by Carmen Ortiz</p>
+    <div class="items-center">
+        <p class="text-white">by Carmen Ortiz 2023</p>
     </div>
-
 </footer>
-@show
 
 </body>
 </html>

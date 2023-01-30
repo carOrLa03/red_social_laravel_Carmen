@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Image;
+use Carbon\Carbon;
 use Faker\Core\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -37,8 +39,12 @@ class ImageController extends Controller
         return redirect()->route('dashboard');
     }
 
-    public function showImage(){
+    public function showImage($id){
+        Carbon::setLocale('ES');
+        $image = Image::find($id);
+        $comments = Comment::all()->where('image_id', '=', $id);
+        $now = Carbon::now();
+        return view('pages.showImages', ['image' => $image, 'comments' => $comments, 'now'=>$now]);
 
-        return view('dashboard');
     }
 }
