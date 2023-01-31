@@ -38,7 +38,7 @@ class CommentsController extends Controller
     {
         //recojo los valores introducidos en el formulario
         $id = Auth::id();
-        $img_id = $request->input('img_id');
+        $img_id = $request->input('imageId');
         $content = $request->input('content');
 
         // creo un nuevo objeto comentario,
@@ -93,6 +93,9 @@ class CommentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comment = Comment::find($id);
+        $comment->delete();
+
+        return redirect()->route('dashboard');
     }
 }

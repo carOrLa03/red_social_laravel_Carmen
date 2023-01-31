@@ -9,6 +9,8 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
+        <link rel="stylesheet" href="{{asset('css/styles.css')}}">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -24,7 +26,7 @@
 
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="bg-white shadow">
+                <header class="bg-crimson shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
@@ -32,9 +34,23 @@
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main class="bg-gray-600">
                 {{ $slot }}
             </main>
+
+            <footer class="footer bg-crimson flex flex-col">
+                <div class="justify-center items-center">
+                    <ul class="nav_lista">
+                        <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/github.png')}}" alt="Git Hub" class="link_logo"></a></li>
+                        <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/facebook.png')}}" alt="Facebook" class="link_logo"></a></li>
+                        <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/instagram.png')}}" alt="Instagram" class="link_logo"></a></li>
+                        <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/whatsapp.png')}}" alt="Whatsapp" class="link_logo"></a></li>
+                    </ul>
+                </div>
+                <div class="items-center">
+                    <p class="text-white">by Carmen Ortiz 2023</p>
+                </div>
+            </footer>
         </div>
 
         @stack('modals')
