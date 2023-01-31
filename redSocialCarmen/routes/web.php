@@ -58,6 +58,7 @@ Route::middleware([
         Route::get('form', [\App\Http\Controllers\ImageController::class, 'form'])->name('form');
         Route::post('save_images', [\App\Http\Controllers\ImageController::class, 'save_images'])->name('save_images');
         Route::get('/{id}', [\App\Http\Controllers\ImageController::class, 'showImage'])->name('showImage');
+
         Route::post('store', [\App\Http\Controllers\CommentsController::class, 'store'])->name('store');
         Route::delete('/{id}', [\App\Http\Controllers\CommentsController::class, 'destroy'])->name('destroy');
 
