@@ -62,6 +62,9 @@ Route::middleware([
         Route::post('store', [\App\Http\Controllers\CommentsController::class, 'store'])->name('store');
         Route::delete('/{id}', [\App\Http\Controllers\CommentsController::class, 'destroy'])->name('destroy');
 
+        Route::post('/{id}', [\App\Http\Controllers\LikeController::class, 'like'])->name('like');
+        Route::post('/{id}', [\App\Http\Controllers\LikeController::class, 'dislike'])->name('dislike');
+
     });
 
     });

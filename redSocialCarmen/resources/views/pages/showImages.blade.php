@@ -6,7 +6,7 @@
     </x-slot>
 
     <section class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
             <x-jet-label>{{$image->user->name}} : {{$image->description}}</x-jet-label>
             <img src="{{asset('img_red_social/'.$image->image_path)}}" alt="imagen">
         </div>

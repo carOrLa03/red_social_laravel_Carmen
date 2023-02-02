@@ -7,7 +7,7 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
             @foreach($images as $image)
                 <div class="flex justify-between">
                     <p>{{$image->user->name . ' '. $image->user->surname}}</p>
@@ -16,7 +16,19 @@
                 <img src="{{asset('img_red_social/'.$image->image_path)}}">
                 <div class="flex justify-between">
                     <a href="{{ route('showImage', ['id'=>$image->id]) }}" class="text-pink-700">Ver detalles</a>
-                    <p>{{count($image->comments)}} comentarios</p>
+                    <p>{{count($image->comments)}} comentarios</p> {{-- cuenta los comentarios de cada foto --}}
+
+                    {{--FORMULARIO PARA GUARDAR LOS LIKES--}}
+                        <form action="#" method="post">
+                            @csrf
+                            <input type="hidden" name="user_id" value="{{$image->user->id}}">
+                            <input type="hidden" name="user_id" value="{{$image->id}}">
+                        </form>
+                    {{-- cuenta los likes que tiene cada foto --}}
+                    <div>
+                        {{count($image->likes)}} likes
+                        <img src="{{asset('images/icons/corazon.svg')}}" alt="corazon" class="link_logo">
+                    </div>
                 </div>
 
 

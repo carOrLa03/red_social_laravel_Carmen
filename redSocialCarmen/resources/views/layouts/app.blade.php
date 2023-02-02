@@ -34,17 +34,17 @@
             @endif
 
             <!-- Page Content -->
-            <main class="bg-gray-600">
+            <main class="bg-gris">
                 {{ $slot }}
             </main>
 
-            <footer class="footer bg-crimson flex flex-col">
-                <div class="justify-center items-center">
-                    <ul class="nav_lista">
-                        <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/github.png')}}" alt="Git Hub" class="link_logo"></a></li>
-                        <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/facebook.png')}}" alt="Facebook" class="link_logo"></a></li>
-                        <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/instagram.png')}}" alt="Instagram" class="link_logo"></a></li>
-                        <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/whatsapp.png')}}" alt="Whatsapp" class="link_logo"></a></li>
+            <footer class="footer bg-crimson flex flex-col p-6">
+                <div class="m-6">
+                    <ul class="nav_lista flex justify-center items-center">
+                        <li class="lista_item p-2"><a href="#" class="link"><img src="{{asset('images/icons/github.svg')}}" alt="Git Hub" class="link_logo"></a></li>
+                        <li class="lista_item p-2"><a href="#" class="link"><img src="{{asset('images/icons/facebook.svg')}}" alt="Facebook" class="link_logo"></a></li>
+                        <li class="lista_item p-2"><a href="#" class="link"><img src="{{asset('images/icons/instagram.svg')}}" alt="Instagram" class="link_logo"></a></li>
+                        <li class="lista_item p-2"><a href="#" class="link"><img src="{{asset('images/icons/whatsapp.svg')}}" alt="Whatsapp" class="link_logo"></a></li>
                     </ul>
                 </div>
                 <div class="items-center">
