@@ -40,6 +40,7 @@ class ImageController extends Controller
     }
 
     public function showImage($id){
+
         Carbon::setLocale('ES');
         $image = Image::find($id);
         $comments = Comment::all()->where('image_id', '=', $id);

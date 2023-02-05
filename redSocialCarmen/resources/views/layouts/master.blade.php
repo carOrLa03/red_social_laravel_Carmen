@@ -24,13 +24,13 @@
         </div>
         <div>
             <ul class="nav_lista flex m-6">
-                <li class="lista_item"><a href="/" class="link">Home</a></li>
-                <li class="lista_item"><a href="{{ route('register') }}" class="link">Register</a></li>
+                <li class="lista_item m-2"><a href="/" class="link">Home</a></li>
+                <li class="lista_item m-2"><a href="{{ route('register') }}" class="link">Register</a></li>
                 @guest
-                <li class="lista_item"><a href="{{ route('login') }}" class="link">Log In</a></li>
+                <li class="lista_item m-2"><a href="{{ route('login') }}" class="link">Log In</a></li>
                 @endguest
                 @auth
-                    <li class="lista_item"><a href="{{ route('dashboard') }}" class="link">Dashboard</a></li>
+                    <li class="lista_item m-2"><a href="{{ route('dashboard') }}" class="link">Dashboard</a></li>
                 @endauth
             </ul>
         </div>
@@ -44,11 +44,11 @@
 @yield('content')
 <footer class="footer bg-crimson flex flex-col">
     <div class="justify-center items-center">
-        <ul class="nav_lista">
-            <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/github.png')}}" alt="Git Hub" class="link_logo"></a></li>
-            <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/facebook.png')}}" alt="Facebook" class="link_logo"></a></li>
-            <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/instagram.png')}}" alt="Instagram" class="link_logo"></a></li>
-            <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/whatsapp.png')}}" alt="Whatsapp" class="link_logo"></a></li>
+        <ul class="nav_lista flex justify-content-around m-2">
+            <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/github.png')}}" alt="Git Hub" class="link_logo"></a></li>
+            <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/facebook.png')}}" alt="Facebook" class="link_logo"></a></li>
+            <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/instagram.png')}}" alt="Instagram" class="link_logo"></a></li>
+            <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/whatsapp.png')}}" alt="Whatsapp" class="link_logo"></a></li>
         </ul>
     </div>
     <div class="items-center">

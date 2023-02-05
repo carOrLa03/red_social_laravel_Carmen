@@ -17,6 +17,9 @@
 
         <!-- Styles -->
         @livewireStyles
+
+        {{-- scripts --}}
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
@@ -38,16 +41,16 @@
                 {{ $slot }}
             </main>
 
-            <footer class="footer">
+            <footer class="footer bg-crimson">
                 <div>
-                    <ul class="nav_lista">
-                        <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/github.png')}}" alt="Git Hub" class="link_logo"></a></li>
-                        <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/facebook.png')}}" alt="Facebook" class="link_logo"></a></li>
-                        <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/instagram.png')}}" alt="Instagram" class="link_logo"></a></li>
-                        <li class="lista_item"><a href="#" class="link"><img src="{{asset('images/icons/whatsapp.png')}}" alt="Whatsapp" class="link_logo"></a></li>
+                    <ul class="nav_lista flex justify-center">
+                        <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/github.png')}}" alt="Git Hub" class="link_logo"></a></li>
+                        <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/facebook.png')}}" alt="Facebook" class="link_logo"></a></li>
+                        <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/instagram.png')}}" alt="Instagram" class="link_logo"></a></li>
+                        <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/whatsapp.png')}}" alt="Whatsapp" class="link_logo"></a></li>
                     </ul>
                 </div>
-                <div>
+                <div class="flex justify-center text-white">
                     <p class="text">by Carmen Ortiz</p>
                 </div>
             </footer>
