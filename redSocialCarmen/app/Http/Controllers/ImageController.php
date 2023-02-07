@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use App\Models\Image;
+use Carbon\Carbon;
 use Faker\Core\File;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -31,7 +31,7 @@ class ImageController extends Controller
 
         if($image_path){
             $image_path_name = time().$image_path->getClientOriginalName();
-            Storage::disk('img_red_social')->put($image_path_name, \Illuminate\Support\Facades\File::get($image_path));
+            Storage::disk('img_red')->put($image_path_name, \Illuminate\Support\Facades\File::get($image_path));
             $image->image_path = $image_path_name;
         }
 
@@ -46,5 +46,6 @@ class ImageController extends Controller
         $comments = Comment::all()->where('image_id', '=', $id);
         $now = Carbon::now();
         return view('pages.showImages', ['image' => $image, 'comments' => $comments, 'now'=>$now]);
+
     }
 }

@@ -13,37 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    $images = \App\Models\Image::all();
-//
-//    foreach ($images as $image){
-//        echo "<img src='$image->image_path' alt=''> <br>";
-//        echo $image->image_path . "<br>";
-//        echo $image->description . "<br>";
-//        echo $image->user->name . ' '. $image->user->surname;
-//        echo "<br>";
-//
-//        echo "<h2>Comments</h2> <br>";
-//        $comments = \App\Models\Comment::all()->where('image_id', '=', $image->id);
-//        $likes =count(\App\Models\Like::all()->where('image_id', '=', $image->id));
-//
-//        foreach ($comments as $comment){
-//            echo $comment->content;
-//        }
-//        echo '<h3>Likes: </h3>' . $likes . '<br>';
-//        echo '<hr>';
-//    }
-//
-//
-//    die();
-//    return view('welcome');
-//
-//});
-
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 Route::get('', [\App\Http\Controllers\WelcomeController::class, 'index']);
 
 
@@ -54,16 +23,19 @@ Route::middleware([
 ])->group(function () {
     Route::prefix('dashboard')->group(function(){
         Route::get('', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+        Route::get('miperfil', [\App\Http\Controllers\MiperfilController::class, 'index'])->name('miperfil');
 
         Route::get('form', [\App\Http\Controllers\ImageController::class, 'form'])->name('form');
         Route::post('save_images', [\App\Http\Controllers\ImageController::class, 'save_images'])->name('save_images');
         Route::get('/{id}', [\App\Http\Controllers\ImageController::class, 'showImage'])->name('showImage');
 
+        Route::get('like/{id}', [\App\Http\Controllers\LikeController::class, 'like'])->name('like');
+//        Route::post('like', [\App\Http\Controllers\LikeController::class, 'like'])->name('like');
+
         Route::post('store', [\App\Http\Controllers\CommentsController::class, 'store'])->name('store');
         Route::delete('/{id}', [\App\Http\Controllers\CommentsController::class, 'destroy'])->name('destroy');
 
-        Route::post('/{id}', [\App\Http\Controllers\LikeController::class, 'like'])->name('like');
-        Route::post('/{id}', [\App\Http\Controllers\LikeController::class, 'dislike'])->name('dislike');
+
 
     });
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -36,18 +37,19 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
-        //recojo los valores introducidos en el formulario
-        $id = Auth::id();
+        //recogemos los valores del formulario
+        $user_id = Auth::id();
         $img_id = $request->input('imageId');
-        $content = $request->input('content');
+        $comentario = $request->input('content');
 
-        // creo un nuevo objeto comentario,
-        // le asigno las variables a los atributos y lo guardo en la BBDD
+        //creamos un nuevo comentario y lo guardamos en la BBDD
         $comment = new Comment();
-        $comment->user_id = $id;
+        $comment->user_id = $user_id;
         $comment->image_id = $img_id;
-        $comment->content = $content;
+        $comment->content = $comentario;
         $comment->save();
+
+
         return redirect()->route('dashboard');
     }
 

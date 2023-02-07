@@ -17,12 +17,13 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        Carbon::setLocale('ES');
         $images = Image::orderBy('id', 'desc')->paginate(2);
+        Carbon::setLocale('ES');
         $now = Carbon::now();
 
+//        $imgComment = Image::withCount('comments')->paginate(2);
 
-        return view('dashboard',['images' => $images, 'now' => $now]);
+        return view('dashboard', ['images'=>$images, 'now'=> $now]);
     }
 
     /**

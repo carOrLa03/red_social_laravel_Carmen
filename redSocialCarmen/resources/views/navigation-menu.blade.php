@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }"  class="bg-crimson border-b border--100">
+<nav x-data="{ open: false }" class="bg-crimson border-b border--100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -18,10 +18,12 @@
                     <x-jet-nav-link :active="request()->routeIs('form')" href="{{route('form')}}">
                         {{ __('Sube Imágenes') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link :active="request()->routeIs('form')" href="{{ route('profile.show') }}">
+                    <x-jet-nav-link :active="request()->routeIs('miperfil')" href="{{route('miperfil')}}">
+                        {{ __('Mi Perfil') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link :active="request()->routeIs('form')" href="{{route('profile.show')}}">
                         {{ __('Settings') }}
                     </x-jet-nav-link>
-
                 </div>
             </div>
 
@@ -104,7 +106,7 @@
                             </div>
 
                             <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Settings') }}
+                                {{ __('Profile') }}
                             </x-jet-dropdown-link>
                             <x-jet-dropdown-link href="{{ route('form') }}">
                                 {{ __('Sube imágenes') }}

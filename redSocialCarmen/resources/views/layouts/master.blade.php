@@ -24,35 +24,37 @@
         </div>
         <div>
             <ul class="nav_lista flex m-6">
-                <li class="lista_item"><a href="/" class="link">Home</a></li>
-                <li class="lista_item"><a href="{{ route('register') }}" class="link">Register</a></li>
-                <li class="lista_item"><a href="{{ route('login') }}" class="link">Log In</a></li>
+                <li class="lista_item m-2"><a href="/" class="link">Home</a></li>
+                <li class="lista_item m-2"><a href="{{ route('register') }}" class="link">Register</a></li>
+                @guest
+                <li class="lista_item m-2"><a href="{{ route('login') }}" class="link">Log In</a></li>
+                @endguest
+                @auth
+                    <li class="lista_item m-2"><a href="{{ route('dashboard') }}" class="link">Dashboard</a></li>
+                @endauth
             </ul>
         </div>
 
     </nav>
-    <div class="container">
-        <h1 class="title">Red Social</h1>
+    <div class="flex justify-center">
+        <h1 class="title text-xl m-4">Red Social</h1>
     </div>
 </header>
 @show
 @yield('content')
-
-<footer class="footer bg-crimson flex flex-col p-6">
-    <div class="m-6">
-        <ul class="flex nav_lista justify-center items-center m-3">
-            <li class="lista_item p-2"><a href="#" class="link"><img src="{{asset('images/icons/github.svg')}}" alt="Git Hub" class="link_logo"></a></li>
-            <li class="lista_item p-2"><a href="#" class="link"><img src="{{asset('images/icons/facebook.svg')}}" alt="Facebook" class="link_logo"></a></li>
-            <li class="lista_item p-2"><a href="#" class="link"><img src="{{asset('images/icons/instagram.svg')}}" alt="Instagram" class="link_logo"></a></li>
-            <li class="lista_item p-2"><a href="#" class="link"><img src="{{asset('images/icons/whatsapp.svg')}}" alt="Whatsapp" class="link_logo"></a></li>
+<footer class="footer bg-crimson flex flex-col">
+    <div class="justify-center items-center">
+        <ul class="nav_lista flex justify-content-around m-2">
+            <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/github.png')}}" alt="Git Hub" class="link_logo"></a></li>
+            <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/facebook.png')}}" alt="Facebook" class="link_logo"></a></li>
+            <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/instagram.png')}}" alt="Instagram" class="link_logo"></a></li>
+            <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/whatsapp.png')}}" alt="Whatsapp" class="link_logo"></a></li>
         </ul>
     </div>
     <div class="items-center">
         <p class="text-white">by Carmen Ortiz 2023</p>
     </div>
-
 </footer>
-
 
 </body>
 </html>
