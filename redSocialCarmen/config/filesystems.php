@@ -55,20 +55,13 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
         ],
-//        'img_red' =>[
-//            'driver' => 'local',
-//            'root'=> storage_path('app/img_red'),
-//            'url'=> env('APP_URL').'/img_red',
-//            'visibility' => 'public',
-//            'throw' => false
-//        ],
-        'img_red_social' =>[
+        'img_red' =>[
             'driver' => 'local',
-            'root'=> storage_path('app/img_red_social'),
-            'url'=> env('APP_URL').'/img_red_social',
+            'root'=> storage_path('app/img_red'),
+            'url'=> env('APP_URL').'/img_red',
             'visibility' => 'public',
             'throw' => false
-        ]
+        ],
 
     ],
 
@@ -84,9 +77,9 @@ return [
     */
 
     'links' => [
-        public_path('storage') => storage_path('app/public'),
-//        public_path('img_red') => storage_path('app/img_red'),
-        public_path('img_red_social') => storage_path('app/img_red_social'),
+//        public_path('storage') => storage_path('app/public'),
+        public_path('img_red') => storage_path('app/img_red'),
+//        public_path('img_red_social') => storage_path('app/img_red_social'),
 
     ],
 
