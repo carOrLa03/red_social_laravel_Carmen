@@ -17,15 +17,16 @@ class LikeController extends Controller
 
     }
 
-//    public function like(Request $request){
-//        $like = new Like();
-//        $like->user_id = Auth::id();
-//        $like->image_id = $request->input('image_id');
-//        $saved = $like->save();
-//
-//        $data['success'] = $saved;
-//        return redirect()->route('dashboard', ['data'=>$data]);
-//
-//    }
-    public function dislike(){}
+    public function dislike($id){
+        $user_id = Auth::id();
+        $dislike = Like::where([['image_id', $id], ['user_id', $user_id]])->get();
+        $dislike->delete();
+        return redirect()->route('dashboard');
+    }
+
+    public function tieneLike($id){ //recibo el id de la imagen
+        $user_id = Auth::id();
+        $dislike = Like::where([['image_id', $id], ['user_id', $user_id]])->first();
+        return  ;
+    }
 }
