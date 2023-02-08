@@ -17,9 +17,8 @@
             <div class="flex justify-between m-2">
                 <a href="{{ route('showImage', ['id'=>$image->id]) }}" class="text-pink-700">Ver los {{count($image->comments)}} comentarios </a>
                 <p>
-                    <a id="heart" href="{{ route('like', ['id'=>$image->id]) }}">
 {{--                        @if()--}}
-                        <svg id="img_heart" viewBox="0 0 24 24" fill="none"  xmlns="http://www.w3.org/2000/svg">
+                        <svg id="img_heart" data-id="{{$image->id}}" viewBox="0 0 24 24" class="fill-none"  xmlns="http://www.w3.org/2000/svg">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                             <g id="SVGRepo_iconCarrier">
@@ -28,9 +27,20 @@
                                 </path>
                             </g>
                         </svg>
-                        <img id="{{$image->id}}" class="w-8" src="http://www.w3.org/2000/svg" alt="">
+                        <img id="img_corazon" class="w-8" src="http://www.w3.org/2000/svg" alt="">
+
+{{--                        @else--}}
+{{--                        <svg id="img_heart" data-id="{{$image->id}}" viewBox="0 0 24 24" class="fill-red-600"  xmlns="http://www.w3.org/2000/svg">--}}
+{{--                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>--}}
+{{--                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>--}}
+{{--                            <g id="SVGRepo_iconCarrier">--}}
+{{--                                <path d="M12.62 20.8101C12.28 20.9301 11.72 20.9301 11.38 20.8101C8.48 19.8201 2 15.6901 2 8.6901C2 5.6001 4.49 3.1001 7.56 3.1001C9.38 3.1001 10.99 3.9801 12 5.3401C13.01 3.9801 14.63 3.1001 16.44 3.1001C19.51 3.1001 22 5.6001 22 8.6901C22 15.6901 15.52 19.8201 12.62 20.8101Z"--}}
+{{--                                      stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">--}}
+{{--                                </path>--}}
+{{--                            </g>--}}
+{{--                        </svg>--}}
+{{--                        <img id="img_corazon" class="w-8" src="http://www.w3.org/2000/svg" alt="">--}}
 {{--                        @endif--}}
-                    </a>
 
                 </p>
             </div>
@@ -60,15 +70,20 @@
     </div>
 
     <script>
+        // const corazon = document.getElementById('img_corazon')
         const heart = document.getElementById('img_heart');
+        const id = heart.dataset.id;
+
         heart.addEventListener('click', () =>{
-            heart.style.fill = 'red';
+            console.log('hola')
+            heart.classList.toggle('fill-red-600')
+            if(heart.classList.contains('fill-red-600')){
+                fetch(`http://redsocialcarmen.com/dashboard/like/${id}`)
+            }else{
+                fetch(`http://redsocialcarmen.com/dashboard/dislike/${id}`)
+            }
         });
-        heart.addEventListener('dblclick', ()=>{
-            const corazon = document.getElementById({{$image->id}})
-            console.log(corazon)
-            heart.style.fill = 'black';
-        })
+
 
 
     </script>

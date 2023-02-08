@@ -30,8 +30,9 @@ Route::middleware([
         Route::get('/{id}', [\App\Http\Controllers\ImageController::class, 'showImage'])->name('showImage');
 
         Route::get('like/{id}', [\App\Http\Controllers\LikeController::class, 'like'])->name('like');
-        Route::delete('dislike/{id}', [\App\Http\Controllers\LikeController::class, 'dislike'])->name('dislike');
-//        Route::post('like', [\App\Http\Controllers\LikeController::class, 'like'])->name('like');
+        Route::get('dislike/{id}', [\App\Http\Controllers\LikeController::class, 'dislike'])->name('dislike');
+//        Route::get('tieneLike/{id}', [\App\Http\Controllers\LikeController::class, 'tieneLike'])->name('tieneLike');
+
 
         Route::post('store', [\App\Http\Controllers\CommentsController::class, 'store'])->name('store');
         Route::delete('/{id}', [\App\Http\Controllers\CommentsController::class, 'destroy'])->name('destroy');

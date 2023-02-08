@@ -19,14 +19,16 @@ class LikeController extends Controller
 
     public function dislike($id){
         $user_id = Auth::id();
-        $dislike = Like::where([['image_id', $id], ['user_id', $user_id]])->get();
+        $dislike = Like::where('image_id', $id)
+            ->where( 'user_id', $user_id);
         $dislike->delete();
         return redirect()->route('dashboard');
     }
 
-    public function tieneLike($id){ //recibo el id de la imagen
-        $user_id = Auth::id();
-        $dislike = Like::where([['image_id', $id], ['user_id', $user_id]])->first();
-        return  ;
-    }
+//    public function tieneLike($id){ //recibo el id de la imagen
+//        $user_id = Auth::id();
+//        $tieneLike = Like::where('image_id', $id)
+//            ->where( 'user_id', $user_id);
+//        return redirect()->route('dashboard', ['tieneLike' => $tieneLike]);
+//    }
 }
