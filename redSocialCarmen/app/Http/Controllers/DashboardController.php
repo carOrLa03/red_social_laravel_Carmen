@@ -17,7 +17,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $images = Image::orderBy('id', 'desc')->paginate(2);
+        $images = Image::orderBy('id', 'desc')->paginate(1);
         Carbon::setLocale('ES');
         $now = Carbon::now();
 

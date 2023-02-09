@@ -21,9 +21,13 @@
                     <x-jet-nav-link :active="request()->routeIs('miperfil')" href="{{route('miperfil')}}">
                         {{ __('Mi Perfil') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link :active="request()->routeIs('users')" href="{{route('users')}}">
+                        {{ __('Usuarios') }}
+                    </x-jet-nav-link>
                     <x-jet-nav-link :active="request()->routeIs('form')" href="{{route('profile.show')}}">
                         {{ __('Settings') }}
                     </x-jet-nav-link>
+
                 </div>
             </div>
 

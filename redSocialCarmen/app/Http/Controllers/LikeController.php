@@ -25,10 +25,4 @@ class LikeController extends Controller
         return redirect()->route('dashboard');
     }
 
-//    public function tieneLike($id){ //recibo el id de la imagen
-//        $user_id = Auth::id();
-//        $tieneLike = Like::where('image_id', $id)
-//            ->where( 'user_id', $user_id);
-//        return redirect()->route('dashboard', ['tieneLike' => $tieneLike]);
-//    }
 }
