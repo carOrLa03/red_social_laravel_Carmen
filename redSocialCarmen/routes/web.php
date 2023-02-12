@@ -28,6 +28,7 @@ Route::middleware([
 
         Route::get('users', [\App\Http\Controllers\UserController::class, 'gente'])->name('users');
         Route::post('buscador', [\App\Http\Controllers\UserController::class, 'buscador'])->name('buscador');
+        Route::post('perfilAmigo', [\App\Http\Controllers\UserController::class, 'perfilAmigo'])->name('perfilAmigo');
 
 
         Route::get('form', [\App\Http\Controllers\ImageController::class, 'form'])->name('form');

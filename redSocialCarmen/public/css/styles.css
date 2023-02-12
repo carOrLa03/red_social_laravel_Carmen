@@ -30,6 +30,7 @@ body{
     align-items: center;
 }
 .link_logo{
+    fill: #a0aec0;
     width: 2em;
     height: 2em;
 }

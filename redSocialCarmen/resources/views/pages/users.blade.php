@@ -54,24 +54,28 @@
                         <p class="text-white">{{$user->name}} {{$user->surname}}</p>
                     </div>
                     <div class="m-1">
-                        <x-jet-button>
-                            Ver Perfil
-                            <svg
-                                class="ml-3 h-5 w-5"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                                />
-                            </svg>
-                        </x-jet-button>
+                        <form action="{{route('perfilAmigo')}}" method="post">
+                            @csrf
+                            <input type="hidden" name="user_id" value="{{$user->id}}">
 
+                            <x-jet-button>
+                                Ver Perfil
+                                <svg
+                                    class="ml-3 h-5 w-5"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                    />
+                                </svg>
+                            </x-jet-button>
+                        </form>
                     </div>
 
                 </div>

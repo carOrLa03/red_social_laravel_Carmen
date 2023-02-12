@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -23,5 +24,13 @@ class UserController extends Controller
         }
         return view('pages.users', ['users'=>$users]);
 
+    }
+
+    public function perfilAmigo(Request $request){
+        $user_id = $request->input('user_id');
+        $user = User::find($user_id);
+
+        $images = Image::where('user_id', '=', $user_id)->get();
+        return view('pages.perfilAmigo', ['user'=>$user, 'images'=>$images]);
     }
 }
