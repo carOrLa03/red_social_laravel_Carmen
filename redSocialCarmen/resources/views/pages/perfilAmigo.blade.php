@@ -6,9 +6,16 @@
     </x-slot>
     <section class="text-center">
         <div>
-            <div>
-                <p>{{$user->name}} {{$user->surname}}</p>
-                <p>{{$user->email}}</p>
+            <div class="flex justify-around m-2">
+                <div>
+                    <img src="{{asset('storage/'.$user->profile_photo_path)}}" alt="photo">
+
+                </div>
+                <div>
+                    <p>{{$user->name}} {{$user->surname}}</p>
+                    <p>{{$user->email}}</p>
+                </div>
+
             </div>
             <div class="flex justify-center m-5">
                 <div class="m-2 text-center">
