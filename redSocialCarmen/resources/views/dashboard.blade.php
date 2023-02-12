@@ -14,8 +14,10 @@
                     <p>{{$image->description}} </p>
                 </div>
                 <img src="{{asset('img_red/'.$image->image_path)}}">
+                <p class="text-white">Les gusta a {{count($image->likes)}} personas</p>
             <div class="flex justify-between m-2">
                 <a href="{{ route('showImage', ['id'=>$image->id]) }}" class="text-white">Ver los {{count($image->comments)}} comentarios </a>
+
                 <p>
                         @if(($image->likes->where('user_id', \Illuminate\Support\Facades\Auth::id())->where('image_id', $image->id))->isEmpty())
                         <svg id="img_heart" data-id="{{$image->id}}" viewBox="0 0 24 24" class="fill-none"  xmlns="http://www.w3.org/2000/svg">

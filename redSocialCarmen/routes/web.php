@@ -24,7 +24,11 @@ Route::middleware([
     Route::prefix('dashboard')->group(function(){
         Route::get('', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
         Route::get('miperfil', [\App\Http\Controllers\MiperfilController::class, 'index'])->name('miperfil');
+
+
         Route::get('users', [\App\Http\Controllers\UserController::class, 'gente'])->name('users');
+        Route::post('buscador', [\App\Http\Controllers\UserController::class, 'buscador'])->name('buscador');
+
 
         Route::get('form', [\App\Http\Controllers\ImageController::class, 'form'])->name('form');
         Route::post('save_images', [\App\Http\Controllers\ImageController::class, 'save_images'])->name('save_images');
