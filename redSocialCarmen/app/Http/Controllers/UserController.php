@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Image;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -32,5 +33,11 @@ class UserController extends Controller
 
         $images = Image::where('user_id', '=', $user_id)->get();
         return view('pages.perfilAmigo', ['user'=>$user, 'images'=>$images]);
+    }
+
+    public function sendFriend($id){
+        $user = Auth::user();
+        $user->befriend($id);
+        return view('pages.perfilAmigo');
     }
 }

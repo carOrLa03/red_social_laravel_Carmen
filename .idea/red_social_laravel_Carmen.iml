@@ -125,6 +125,7 @@
       <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/mobiledetect/mobiledetectlib" />
       <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/laravel/fortify" />
       <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/laravel/jetstream" />
+      <excludeFolder url="file://$MODULE_DIR$/redSocialCarmen/vendor/hootlex/laravel-friendships" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -8,10 +8,10 @@
         <div>
             <div class="flex justify-around m-2">
                 <div>
-                    <img src="{{asset('storage/'.$user->profile_photo_path)}}" alt="photo">
+                    <img class="w-10 rounded-full" src="{{asset('storage/'.$user->profile_photo_path)}}" alt="photo">
 
                 </div>
-                <div>
+                <div class="text-white">
                     <p>{{$user->name}} {{$user->surname}}</p>
                     <p>{{$user->email}}</p>
                 </div>
@@ -30,6 +30,21 @@
                     <p>3</p>
                     <p>Siguiendo</p>
                 </div>
+            </div>
+            <div class="flex justify-evenly m-2 p-2">
+                <div class="w-24 p-3 bg-gray-900 rounded shadow-lg shadow-cyan-800 hover:bg-gray-700">
+                    <a class="text-white " href="{{route('sendFriend', ['id'=>$user->id])}}">Seguir</a>
+                </div>
+                <div class="w-24 p-3 bg-gray-900 rounded shadow-lg shadow-cyan-800 hover:bg-gray-700">
+                    <a class="text-white " href="#">Mensaje</a>
+                </div>
+                <div class="w-24 p-3 bg-gray-900 rounded shadow-lg shadow-cyan-800 hover:bg-gray-700">
+                    <a class="text-white " href="#">Correo</a>
+                </div>
+
+
+
+
             </div>
         </div>
         <div class="m-5">

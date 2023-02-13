@@ -47,7 +47,7 @@
             @foreach($users as $user)
                 <div class="flex border-gray-500 border-b-2 m-3 justify-between items-center  shadow-lg">
                     <div class="m-1">
-                        <img class="rounded-full w-10" src="{{asset('storage/'.$user->profile_photo_path)}}" alt="hola">
+                        <img class="w-10 rounded-full " src="{{asset('storage/'.$user->profile_photo_path)}}" alt="hola">
                     </div>
                     <div class="m-1">
                         <p>{{'@'.$user->user_name}}</p>
