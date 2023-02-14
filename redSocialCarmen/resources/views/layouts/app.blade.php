@@ -42,7 +42,7 @@
             </main>
 
             <footer class="footer bg-crimson">
-                <div>
+                <div class="p-2">
                     <ul class="nav_lista flex justify-center">
                         <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/github.svg')}}" alt="Git Hub" class="link_logo"></a></li>
                         <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/facebook.svg')}}" alt="Facebook" class="link_logo"></a></li>
@@ -50,8 +50,9 @@
                         <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/whatsapp.svg')}}" alt="Whatsapp" class="link_logo"></a></li>
                     </ul>
                 </div>
-                <div class="flex justify-center text-white">
+                <div class="flex-col justify-center text-white text-center">
                     <p class="text">by Carmen Ortiz</p>
+                    <p class="text">2023</p>
                 </div>
             </footer>
         </div>

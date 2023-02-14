@@ -12,9 +12,12 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
+        <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+
     </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
+    <body class="bg-gris">
+        <div class="font-sans text-gray-900 antialiased bg-grey-500">
             {{ $slot }}
         </div>
     </body>

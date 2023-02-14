@@ -43,8 +43,8 @@
 @show
 @yield('content')
 <footer class="footer bg-crimson flex flex-col">
-    <div class="justify-center items-center">
-        <ul class="nav_lista flex justify-content-around m-2">
+    <div class="justify-center items-center p-7">
+        <ul class="nav_lista flex justify-content-around m-3">
             <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/github.svg')}}" alt="Git Hub" class="link_logo"></a></li>
             <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/facebook.svg')}}" alt="Facebook" class="link_logo"></a></li>
             <li class="lista_item m-2"><a href="#" class="link"><img src="{{asset('images/icons/instagram.svg')}}" alt="Instagram" class="link_logo"></a></li>

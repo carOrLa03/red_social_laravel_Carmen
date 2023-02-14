@@ -24,14 +24,14 @@ Route::middleware([
     Route::prefix('dashboard')->group(function(){
         Route::get('', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
         Route::get('miperfil', [\App\Http\Controllers\MiperfilController::class, 'index'])->name('miperfil');
+        Route::get('acceptFriend/{id}', [\App\Http\Controllers\MiperfilController::class, 'acceptFriend'])->name('acceptFriend');
+        Route::get('cancelFriend/{id}', [\App\Http\Controllers\MiperfilController::class, 'cancelFriend'])->name('cancelFriend');
 
 
         Route::get('users', [\App\Http\Controllers\UserController::class, 'gente'])->name('users');
         Route::post('buscador', [\App\Http\Controllers\UserController::class, 'buscador'])->name('buscador');
         Route::post('perfilAmigo', [\App\Http\Controllers\UserController::class, 'perfilAmigo'])->name('perfilAmigo');
         Route::get('sendFriend/{id}', [\App\Http\Controllers\UserController::class, 'sendFriend'])->name('sendFriend');
-        Route::get('acceptFriend/{id}', [\App\Http\Controllers\UserController::class, 'acceptFriend'])->name('acceptFriend');
-
 
         Route::get('form', [\App\Http\Controllers\ImageController::class, 'form'])->name('form');
         Route::post('save_images', [\App\Http\Controllers\ImageController::class, 'save_images'])->name('save_images');
@@ -39,8 +39,6 @@ Route::middleware([
 
         Route::get('like/{id}', [\App\Http\Controllers\LikeController::class, 'like'])->name('like');
         Route::get('dislike/{id}', [\App\Http\Controllers\LikeController::class, 'dislike'])->name('dislike');
-//        Route::get('tieneLike/{id}', [\App\Http\Controllers\LikeController::class, 'tieneLike'])->name('tieneLike');
-
 
         Route::post('store', [\App\Http\Controllers\CommentsController::class, 'store'])->name('store');
         Route::delete('/{id}', [\App\Http\Controllers\CommentsController::class, 'destroy'])->name('destroy');

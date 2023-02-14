@@ -28,53 +28,36 @@ class UserController extends Controller
 
     }
 
+    //me enseña el perfil del amigo que quiero ver
     public function perfilAmigo(Request $request){
         $user_id = $request->input('user_id');
         $user = User::find($user_id);
 
         $images = Image::where('user_id', '=', $user_id)->get();
-        $solicitudes = Friendship::where('sender_id', '=', $user->id)
-            ->where('status', '=', 0)->get();
-
-        return view('pages.perfilAmigo', [
-            'user'=>$user,
-            'images'=>$images,
-            'solicitudes'=>$solicitudes
-        ]);
+        return view('pages.perfilAmigo', ['user'=>$user, 'images'=>$images,]);
     }
 
+    //solicitud de amistad del usuario autenticado, al amigo del perfil visitado
     public function sendFriend($id){
 
         $userYo = Auth::user(); //me traigo yo
         $friend = User::find($id); //traigo al amigo
 
         $images = Image::where('user_id', '=', $id)->get();
-        $solicitudes = Friendship::where('sender_id', '=', $userYo->id)
-            ->where('status', '=', 0)->get();
+
+        //si el usuario autenticado es el mismo al que se le pide la solicitud
+        // vuelvo a la vista del perfil del amigo visitado
         if($userYo == $friend){
             return view('pages.perfilAmigo', ['user'=>$friend, 'images'=>$images]);
         }
-        $userYo->befriend($friend); //le pido amistad al amigo y una vez pedida la amistad me redirige a mi perfil
-        return view('pages.perfilAmigo', [
-            'user'=>$userYo,
-            'images'=>$images,
-            'solicitudes'=>$solicitudes
-        ]);
+        //le pido amistad al amigo y una vez pedida la amistad me redirige a mi perfil
+        $userYo->befriend($friend);
+
+        return view('pages.perfilAmigo', ['user'=>$friend, 'images'=>$images,]);
     }
 
-    public function acceptFriend($id){
-        $userYo = Auth::user(); //me traigo yo
-        $sender = Friendship::find($id); //traemos el amigo
-        $userYo->acceptFriendRequest($sender);
 
-        $images = Image::where('user_id', '=', $id)->get();
-        $solicitudes = Friendship::where('sender_id', '=', $userYo->id)
-            ->where('status', '=', 0)->get();
-        return view('pages.perfilAmigo', [
-            'user'=>$userYo,
-            'images'=>$images,
-            'solicitudes'=>$solicitudes
-        ]);
-    }
+
+
 
 }

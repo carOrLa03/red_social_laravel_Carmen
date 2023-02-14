@@ -53,9 +53,9 @@
                         <p>{{'@'.$user->user_name}}</p>
                         <p class="text-white">{{$user->name}} {{$user->surname}}</p>
                     </div>
-                    <div class="w-24 p-3 bg-gray-900 rounded shadow-lg shadow-cyan-800 hover:bg-gray-700">
-                        <a class="text-white " href="{{route('sendFriend', ['id'=>$user->id])}}">Seguir</a>
-                    </div>
+{{--                    <div class="w-24 p-3 bg-gray-900 rounded shadow-lg shadow-cyan-800 hover:bg-gray-700">--}}
+{{--                        <a class="text-white " href="{{route('sendFriend', ['id'=>$user->id])}}">Seguir</a>--}}
+{{--                    </div>--}}
                     <div class="m-1">
                         <form action="{{route('perfilAmigo')}}" method="post">
                             @csrf
