@@ -30,6 +30,7 @@ Route::middleware([
         Route::post('buscador', [\App\Http\Controllers\UserController::class, 'buscador'])->name('buscador');
         Route::post('perfilAmigo', [\App\Http\Controllers\UserController::class, 'perfilAmigo'])->name('perfilAmigo');
         Route::get('sendFriend/{id}', [\App\Http\Controllers\UserController::class, 'sendFriend'])->name('sendFriend');
+        Route::get('acceptFriend/{id}', [\App\Http\Controllers\UserController::class, 'acceptFriend'])->name('acceptFriend');
 
 
         Route::get('form', [\App\Http\Controllers\ImageController::class, 'form'])->name('form');
