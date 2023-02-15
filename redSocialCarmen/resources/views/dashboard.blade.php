@@ -13,7 +13,7 @@
                     <p>{{$image->user->name . ' '. $image->user->surname}}</p>
                     <p>{{$image->description}} </p>
                 </div>
-                <img src="{{asset('img_red/'.$image->image_path)}}">
+                <img class="rounded-lg" src="{{asset('img_red/'.$image->image_path)}}">
                 <p class="text-white">Les gusta a {{count($image->likes)}} personas</p>
             <div class="flex justify-between m-2">
                 <a href="{{ route('showImage', ['id'=>$image->id]) }}" class="text-white">Ver los {{count($image->comments)}} comentarios </a>
@@ -60,7 +60,7 @@
                             <x-jet-label>Deja un comentario</x-jet-label>
                             <textarea class="border-gray-300 focus:border-pink-700 focus:ring-pink-800 rounded-md shadow-sm" name="content"></textarea>
                         </div>
-                        <div>
+                        <div class="m-1">
                             <x-jet-button>Envía</x-jet-button>
                         </div>
                     </form>
