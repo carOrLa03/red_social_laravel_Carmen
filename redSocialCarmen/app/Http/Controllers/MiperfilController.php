@@ -20,7 +20,7 @@ class MiperfilController extends Controller
 
         //recorro el array de solicitudes para buscar el id del usuario y traerme su id y su nombre
         foreach ($solicitudesPendientes as $solicitud){
-            $amigo = User::find($solicitud->recipient_id, ['id','name']);
+            $amigo = User::find($solicitud->sender_id, ['id','name']);
             array_push($amigos, $amigo);
 
         }
