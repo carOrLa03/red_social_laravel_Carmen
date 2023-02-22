@@ -14,10 +14,6 @@
                 <p>{{$user->getFriendsCount()}}</p>
                 <p>Mis amigos</p>
             </div>
-            <div class="m-2 text-center">
-                <p>3</p>
-                <p>Siguiendo</p>
-            </div>
         </div>
 
     </section>
@@ -27,11 +23,13 @@
             <div class="m-3 col-span-5 bg-gray-500 rounded-lg w-1/4 shadow-lg shadow-cyan-900">
                 <h3 class="m-3 text-slate-900 font-semibold text-xl">Solicitudes Pendientes</h3>
                 @foreach($solicitudes as $solicitud)
+                    @if($solicitud->name != $user->name)
                     <div class="m-2 flex p-1">
                         <p class="text-white">{{$solicitud->name}} quiere ser tu amigo</p>
                         <a href="{{route('acceptFriend', ['id'=>$solicitud->id])}}" class="ml-3 text-white hover:text-green-500" >Aceptar</a>
                         <a href="{{route('cancelFriend', ['id'=>$solicitud->id])}}" class="ml-3 text-white hover:text-crimson" >Denegar</a>
                     </div>
+                    @endif
                 @endforeach
             </div>
             <div class="m-5 w-2/3">

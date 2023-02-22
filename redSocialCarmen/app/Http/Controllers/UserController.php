@@ -32,9 +32,10 @@ class UserController extends Controller
     public function perfilAmigo(Request $request){
         $user_id = $request->input('user_id');
         $user = User::find($user_id);
-
         $images = Image::where('user_id', '=', $user_id)->get();
-        return view('pages.perfilAmigo', ['user'=>$user, 'images'=>$images,]);
+        $pending = $user->getPendingFriendships();
+        dd($pending);
+        return view('pages.perfilAmigo', ['user'=>$user, 'images'=>$images]);
     }
 
     //solicitud de amistad del usuario autenticado, al amigo del perfil visitado

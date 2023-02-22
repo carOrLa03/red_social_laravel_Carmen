@@ -9,13 +9,11 @@
             <div class="flex justify-around m-2">
                 <div>
                     <img class="w-10 rounded-full" src="{{asset('storage/'.$user->profile_photo_path)}}" alt="photo">
-
                 </div>
                 <div class="text-white">
                     <p>{{$user->name}} {{$user->surname}}</p>
                     <p>{{$user->email}}</p>
                 </div>
-
             </div>
             <div class="text-white flex justify-center m-5 p-2 bg-gray-500 rounded-lg shadow-lg shadow-cyan-900">
                 <div class="p-3 text-center">
@@ -28,9 +26,12 @@
                 </div>
             </div>
             <div class="flex justify-evenly m-2 p-2">
+{{-- SI EL USUARIO AUTENTICADO YA ES AMIGO DEL PERFIL VISITADO, NO LE SALDRÁ EL BOTON DE SER AMIGOS--}}
+                @if(($user->getFriendship(Auth::user())->status != 1))
                 <div class="w-32 p-3 bg-gray-900 rounded shadow-lg shadow-cyan-800 hover:bg-gray-700">
                     <a class="text-white " href="{{route('sendFriend', ['id'=>$user->id])}}">Ser amigo</a>
                 </div>
+                @endif
                 <div class="w-32 p-3 bg-gray-900 rounded shadow-lg shadow-cyan-800 hover:bg-gray-700">
                     <a class="text-white " href="#">Mis amigos</a>
                 </div>

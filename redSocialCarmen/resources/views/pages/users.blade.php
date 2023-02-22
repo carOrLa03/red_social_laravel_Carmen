@@ -45,17 +45,16 @@
     <section>
         <div>
             @foreach($users as $user)
+{{--     SI EL USER AUTENTICADO ES EL USER NO APARECERÁ EN LA LISTA DE USUARIOS--}}
+                @if(\Illuminate\Support\Facades\Auth::id() != $user->id)
                 <div class="flex border-gray-500 border-b-2 m-3 justify-between items-center  shadow-lg">
                     <div class="m-1">
-                        <img class="w-10 rounded-full " src="{{asset('storage/'.$user->profile_photo_path)}}" alt="hola">
+                        <img class="w-10 rounded-full " src="{{asset('storage/'.$user->profile_photo_path)}}" alt="img">
                     </div>
                     <div class="m-1">
                         <p>{{'@'.$user->user_name}}</p>
                         <p class="text-white">{{$user->name}} {{$user->surname}}</p>
                     </div>
-{{--                    <div class="w-24 p-3 bg-gray-900 rounded shadow-lg shadow-cyan-800 hover:bg-gray-700">--}}
-{{--                        <a class="text-white " href="{{route('sendFriend', ['id'=>$user->id])}}">Seguir</a>--}}
-{{--                    </div>--}}
                     <div class="m-1">
                         <form action="{{route('perfilAmigo')}}" method="post">
                             @csrf
@@ -82,6 +81,7 @@
                     </div>
 
                 </div>
+                @endif
             @endforeach
         </div>
     </section>
