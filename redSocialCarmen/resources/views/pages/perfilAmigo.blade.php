@@ -27,21 +27,16 @@
             </div>
             <div class="flex justify-evenly m-2 p-2">
 {{-- SI EL USUARIO AUTENTICADO YA ES AMIGO DEL PERFIL VISITADO, NO LE SALDRÁ EL BOTON DE SER AMIGOS--}}
-                @if(($user->getFriendship(Auth::user())->status != 1))
+{{--                (Auth::user()->getFriendship($user)->status != 1) || (Auth::user()->getFriendship($user)->status == null) --}}
+                @if(!($user->isFriendWith(Auth::user())))
                 <div class="w-32 p-3 bg-gray-900 rounded shadow-lg shadow-cyan-800 hover:bg-gray-700">
                     <a class="text-white " href="{{route('sendFriend', ['id'=>$user->id])}}">Ser amigo</a>
                 </div>
                 @endif
-                <div class="w-32 p-3 bg-gray-900 rounded shadow-lg shadow-cyan-800 hover:bg-gray-700">
-                    <a class="text-white " href="#">Mis amigos</a>
-                </div>
-                <div class="w-32 p-3 bg-gray-900 rounded shadow-lg shadow-cyan-800 hover:bg-gray-700">
-                    <a class="text-white " href="#">Mensaje</a>
-                </div>
             </div>
         </div>
-        <section class="images">
-            <div class="m-2">
+        <section class="images flex flex-row m-2">
+            <div class="m-2 col-span-5 ">
                 <div class="m-5 w-2/3">
                     @foreach($images as $image)
                         <div class="m-2">
@@ -49,6 +44,14 @@
                         </div>
                     @endforeach
                 </div>
+            </div>
+            <div class="m-3 col-span-5 bg-gray-500 rounded-lg w-1/4 shadow-lg shadow-cyan-900">
+                <h3 class="m-3 text-slate-900 font-semibold text-xl">Mis amigos</h3>
+                @foreach($misamigos as $amigo)
+                    <div class="m-2 flex p-1">
+                        <p class="text-white">{{$amigo->name}}</p>
+                    </div>
+                @endforeach
             </div>
         </section>
     </section>

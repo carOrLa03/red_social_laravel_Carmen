@@ -33,9 +33,9 @@ class UserController extends Controller
         $user_id = $request->input('user_id');
         $user = User::find($user_id);
         $images = Image::where('user_id', '=', $user_id)->get();
-        $pending = $user->getPendingFriendships();
-        dd($pending);
-        return view('pages.perfilAmigo', ['user'=>$user, 'images'=>$images]);
+        $misAmigos = $user->getFriends(); //array de los amigos
+
+        return view('pages.perfilAmigo', ['user'=>$user, 'images'=>$images, 'misamigos'=>$misAmigos]);
     }
 
     //solicitud de amistad del usuario autenticado, al amigo del perfil visitado
@@ -45,16 +45,17 @@ class UserController extends Controller
         $friend = User::find($id); //traigo al amigo
 
         $images = Image::where('user_id', '=', $id)->get();
+        $misAmigos = $friend->getFriends(); //array de los amigos
 
         //si el usuario autenticado es el mismo al que se le pide la solicitud
         // vuelvo a la vista del perfil del amigo visitado
         if($userYo == $friend){
-            return view('pages.perfilAmigo', ['user'=>$friend, 'images'=>$images]);
+            return view('pages.perfilAmigo', ['user'=>$friend, 'images'=>$images, 'misamigos'=>$misAmigos]);
         }
         //le pido amistad al amigo y una vez pedida la amistad me redirige a mi perfil
         $userYo->befriend($friend);
 
-        return view('pages.perfilAmigo', ['user'=>$friend, 'images'=>$images,]);
+        return view('pages.perfilAmigo', ['user'=>$friend, 'images'=>$images,'misamigos'=>$misAmigos]);
     }
 
 

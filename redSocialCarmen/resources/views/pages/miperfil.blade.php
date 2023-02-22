@@ -42,6 +42,14 @@
                     </div>
                 @endforeach
             </div>
+            <div class="m-3 col-span-5 bg-gray-500 rounded-lg w-1/4 shadow-lg shadow-cyan-900">
+                <h3 class="m-3 text-slate-900 font-semibold text-xl">Mis amigos</h3>
+                @foreach($misamigos as $amigo)
+                        <div class="m-2 flex p-1">
+                            <p class="text-white">{{$amigo->name}}</p>
+                        </div>
+                @endforeach
+            </div>
         </div>
     </section>
 </x-app-layout>

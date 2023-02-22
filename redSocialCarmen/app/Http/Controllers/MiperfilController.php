@@ -17,6 +17,7 @@ class MiperfilController extends Controller
         $images = Image::all()->where('user_id', '=', $user->id);
         $solicitudesPendientes = $user->getPendingFriendships();
         $amigos = [];
+        $misAmigos = $user->getFriends(); //array de los amigos
 
         //recorro el array de solicitudes para buscar el id del usuario y traerme su id y su nombre
         foreach ($solicitudesPendientes as $solicitud){
@@ -24,7 +25,7 @@ class MiperfilController extends Controller
             array_push($amigos, $amigo);
 
         }
-        return view('pages.miperfil', ['user'=>$user, 'images'=>$images, 'solicitudes'=>$amigos ]);
+        return view('pages.miperfil', ['user'=>$user, 'images'=>$images, 'solicitudes'=>$amigos , 'misamigos'=>$misAmigos]);
     }
 
     public function acceptFriend($id)
