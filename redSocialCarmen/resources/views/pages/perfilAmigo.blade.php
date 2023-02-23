@@ -28,10 +28,14 @@
             <div class="flex justify-evenly m-2 p-2">
 {{-- SI EL USUARIO AUTENTICADO YA ES AMIGO DEL PERFIL VISITADO, NO LE SALDRÁ EL BOTON DE SER AMIGOS--}}
 {{--                (Auth::user()->getFriendship($user)->status != 1) || (Auth::user()->getFriendship($user)->status == null) --}}
-                @if(!($user->isFriendWith(Auth::user())))
-                <div class="w-32 p-3 bg-gray-900 rounded shadow-lg shadow-cyan-800 hover:bg-gray-700">
-                    <a class="text-white " href="{{route('sendFriend', ['id'=>$user->id])}}">Ser amigo</a>
-                </div>
+                @if(!$user->isFriendWith(Auth::user()))
+                    @if(!$user->hasFriendRequestFrom(Auth::user()))
+                        @if(!$user->hasSentFriendRequestTo(Auth::user()))
+                            <div class="w-32 p-3 bg-gray-900 rounded shadow-lg shadow-cyan-800 hover:bg-gray-700">
+                                <a class="text-white " href="{{route('sendFriend', ['id'=>$user->id])}}">Ser amigo</a>
+                            </div>
+                        @endif
+                    @endif
                 @endif
             </div>
         </div>
@@ -46,7 +50,7 @@
                 </div>
             </div>
             <div class="m-3 col-span-5 bg-gray-500 rounded-lg w-1/4 shadow-lg shadow-cyan-900">
-                <h3 class="m-3 text-slate-900 font-semibold text-xl">Mis amigos</h3>
+                <h3 class="m-3 text-slate-900 font-semibold text-xl">Sus amigos</h3>
                 @foreach($misamigos as $amigo)
                     <div class="m-2 flex p-1">
                         <p class="text-white">{{$amigo->name}}</p>

@@ -77,7 +77,6 @@
         const id = heart.dataset.id;
 
         heart.addEventListener('click', () =>{
-            console.log('hola')
             heart.classList.toggle('fill-red-600')
             if(heart.classList.contains('fill-red-600')){
                 fetch(`http://redsocialcarmen.com/dashboard/like/${id}`)
